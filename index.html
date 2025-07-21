@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zahra Husain | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Loader Styles */
+    body {
+      background-color: #1c1d2;
+      margin: 0;
+    }
+   
+    #page-wrap {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    body.loaded #page-wrap {
+      opacity: 1;
+    }
+
+    @keyframes stripe {
+      0% { left: 0; width: 0px; }
+      25% { left: 0; width: 100%; }
+      50% { left: 100%; width: 0px; }
+      75% { left: 0; width: 100%; }
+      100% { left: 0; width: 0px; }
+    }
+
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #252a60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: opacity 0.7s, visibility 0.7s;
+    }
+
+    #loader.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .stripe-loader {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stripe {
+      height: 30px;
+      width: 0;
+      background: #ffffff;
+      position: relative;
+      animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) infinite;
+    }
+
+    .stripe:nth-child(2) { animation-delay: 0.1s; }
+    .stripe:nth-child(3) { animation-delay: 0.2s; }
+  </style>
+</head>
+
+<body>
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="stripe-loader">
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+    </div>
+  </div>
+
+  <!-- PAGE CONTENT -->
+  <div id="page-wrap">
+    <!-- Your original content begins -->
+    <header class="main-nav">
+      <a href="#" class="logo">
+        <img id="navLogo" src="assets/monogram_white.svg" alt="ZH Logo">
+      </a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#aboutme">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-logo">
+        <img id="heroLogo" src="assets/monogram_color.svg" alt="" aria-hidden="true">
+      </div>
+      <div class="hero-content">
+        <h1>Zahra Husain</h1>
+        <p id="typedSubtitle" class="typed-subtitle"></p>
+        <div class="left-email">
+          <a href="mailto:zahra.husain@columbia.edu">zahra.husain@columbia.edu</a>
+        </div>
+        <a href="#contact" id="hireMe" class="btn primary">Hire Me →</a>
+      </div>
+    </section>
+
+    <div class="fixed-socials">
+        <a href="https://linkedin.com/in/zahra-husain-/"><img src="assets/linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://github.com/zahrahusain45"><img src="assets/github.svg" alt="GitHub" /></a>
+        <a href="https://www.instagram.com/zahrahusain4"><img src="assets/instagram.svg" alt="Instagram" /></a>
+        <a href="mailto:zahra.husain@columbia.edu"><img src="assets/email.svg" alt="Email" /></a>
+    </div>
+
+    
+
+    <div class="projects-bg">
+      <section id="about" class="about-section">
+        <div class="about-container">
+          <div class="about-text">
+            <h2>About Me.</h2>
+            <p><em>Computer Science at Columbia University.</em></p>
+            <br>
+            <p>
+              I'm Zahra Husain, a rising junior at Columbia studying <strong>Computer Science</strong> and <strong>Business Management</strong>.
+              I love using code to solve real problems. My work spans machine learning, natural language processing, full-stack apps, and data infrastructure, always grounded in curiosity and impact.
+            </p>
+            <br>
+            <p>
+              I'm originally from Lahore, Pakistan, you’ll often find me biking around the city, experimenting with new recipes, or buried in a good museum exhibit.
+            </p>
+            <br>
+            <a href="assets/Zahra_Husain_Resume.pdf" class="btn-resume" target="_blank">Resume →</a>
+          </div>
+          <img src="assets/profile.png" alt="Zahra Husain" class="profile-pic" />
+        </div>
+
+        <div class="tag-row">
+          <h4>Languages:</h4>
+          <div class="tag-group">
+              <span>Python</span>
+              <span>Java</span>
+              <span>C</span>
+              <span>SQL</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Bash</span>
+          </div>
+        </div>
+        <div class="tag-row">
+          <h4>Frameworks:</h4>
+          <div class="tag-group">
+            <span>React</span>
+            <span>Flask</span>
+            <span>PyTorch</span>
+            <span>scikit-learn</span>
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>OpenCV</span>
+            <span> Hugging Face </span>
+            <span>Power BI</span>
+          </div>
+        </div>
+        <div class="tag-row">
+          <h4>Tools:</h4>
+          <div class="tag-group">
+            <span>Git</span>
+            <span>Microsoft Purview</span>
+            <span>Jupyter Notebook</span>
+            <span>Figma</span>
+            <span>Linux</span>
+            <span>PySpark</span>
+            <span>Llama</span>
+            <span> OpenRouter GPT </span>
+            <span>Chrome Extension API</span>
+          </div>
+        </div>
+        <div class="tag-row">
+          <h4>Concepts:</h4>
+          <div class="tag-group">
+            <span>Natural Language Processing</span>
+            <span>Machine Learning</span>
+            <span>Computer Vision</span>
+            <span>LLM Integration</span>
+            <span>ETL Pipelines</span>
+            <span>Data Governance</span>
+            <span>Data Visualization</span>
+          </div>
+        </div>
+  </div>   
+</section>
+</div>
+    
+  
+        
+    <div class="full-width-white">
+        <!-- EXPERIENCE / TIMELINE -->
+        <section id="experience" class="section experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-entry">
+              <div class="experience-left">2025 — Present</div>
+              <div class="experience-right">
+                <h3 class="experience-role">Data Governance Intern · Grupo Bimbo</h3>
+                <p class="experience-description">
+                  Built a centralized Microsoft Purview data catalog covering 500+ BI reports; collaborated across 5+ teams to establish a unified glossary, resolving 20+ cross-department data inconsistencies.
+                </p>
+                <div class="experience-tags">
+                  <span>Data Governance</span>
+                  <span>Microsoft Purview</span>
+                  <span>SQL</span>
+                  <span>Power Bi</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-entry">
+              <div class="experience-left">2025 — Present</div>
+              <div class="experience-right">
+                <h3 class="experience-role">Research Assistant · Columbia University</h3>
+                <p class="experience-description">
+                  Led a radiomics study analyzing 5,000+ breast cancer MRI scans; developed ML algorithms in Python to extract image-based tumor biomarkers with 95% confidence, supporting clinical research.
+                </p>
+                <div class="experience-tags">
+                  <span>Python</span>
+                  <span>Pandas</span>
+                  <span>Radiomics</span>
+                  <span>ML</span>
+                  <span>scikit-image</span>
+                </div>
+              </div>
+            </div>
+        
+          
+            <div class="experience-entry">
+              <div class="experience-left">2024</div>
+              <div class="experience-right">
+                <h3 class="experience-role">Data Engineer Intern · Techlogix</h3>
+                <p class="experience-description">
+                  Designed scalable data pipelines processing 1TB/day and automated 150+ QA scripts in PySpark, improving data accuracy to 99%. Built 5+ dashboards and optimized fraud detection for 30M+ users.
+                </p>
+                <div class="experience-tags">
+                  <span>Python</span>
+                  <span>ETL</span>
+                  <span>SQL</span>
+                  <span>PySpark</span>
+                  <span>Power Bi</span>
+                </div>
+              </div>
+            </div>
+          
+            <div class="experience-entry">
+              <div class="experience-left">2022 — 2022</div>
+              <div class="experience-right">
+                <h3 class="experience-role">Business Strategy & Growth Intern · EduFi</h3>
+                <p class="experience-description">
+                  Increased user adoption by 25% through SQL-driven outreach; identified 20+ high-potential client segments and analyzed 50+ VC firm portfolios to support investor targeting.
+                </p>
+                <div class="experience-tags">
+                  <span>SQL</span>
+                  <span>Marketing Analytics</span>
+                  <span>Data Analysis</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+          
+        <!-- PROJECTS -->
+         
+        <div class="projects-bg">
+            <section id="projects" class="projects-section">
+              <h2>Projects</h2>
+              <p class="projects-subtitle">Click on any project to learn more</p>
+              <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-icon">📝</div>
+                    <h3>ToS Summarizer</h3>
+                    <p>Chrome extension that uses LLaMA to summarize Terms of Service pages in real time, reducing reading time by 80% across 100+ websites.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>LLM</span>
+                        <span>Chrome Extension API</span>
+                  </div>
+                </div>
+              
+                <div class="project-card">
+                    <div class="project-icon">💸</div>
+                    <h3>SmartMoney Hub</h3>
+                    <p>Personal finance app that classifies transactions from CSV bank statements using GPT, achieving 98% accuracy and saving users 5+ hours/week.
+                    </p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Python</span>
+                        <span>OpenRouter GPT</span>
+                        <span>CSV Parsing</span>
+                        <span>UI/UX</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-icon">🏌️</div>
+                  <h3> Golf Swing Analyzer</h3>
+                  <p>Computer vision app that analyzes golf swings using pose estimation and offers real-time coaching with LLM-powered feedback.                  </p>
+                  <div class="project-tags">
+                      <span>OpenCV</span>
+                      <span>Hugging Face </span>
+                      <span>MediaPipe</span>
+                      <span>Flask</span>
+                      <span>LLM </span>
+                      <span>Python</span>
+                  </div>
+              </div>
+              <div class="project-card">
+                <div class="project-icon">💸</div>
+                <h3>NYC Rideshare ML Model</h3>
+                <p>Built ML models to predict ride prices and classify Uber vs. Lyft trips using NYC open data, with geospatial feature engineering and model evaluation.
+                </p>
+                <div class="project-tags">
+                    <span>Pandas</span>
+                    <span>scikit-learn</span>
+                    <span>Python</span>
+                    <span>Jupyter</span>
+                    <span>Data Visualization</span>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-icon">🧠</div>
+                <h3>Self-Tuning Habit Tracker</h3>
+                <p>ML-powered journaling app that uses NLP to extract mood patterns and LLMs to generate personalized habit recommendations.
+                </p>
+                <div class="project-tags">
+                    <span>NLP</span>
+                    <span>React</span>
+                    <span>Python</span>
+                    <span>Time Series</span>
+                    <span>NumPy</span>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="full-width-white">
+            <section id="projects" class="leadership section">
+            <h2>Leadership & Social Impact</h2>
+            <div class="leadership-entry">
+              <div class="leadership-left">2025 — Present</div>
+              <div class="leadership-right">
+                <div class="leadership-role">President · Club Zamana</div>
+                <div class="leadership-description">
+                  Lead Columbia’s South Asian cultural organization; planned and executed 10+ high-impact community events promoting identity, inclusion, and campus dialogue.
+                </div>
+                <div class="leadership-tags">
+                  <span>Leadership</span>
+                  <span>Community Engagement</span>
+                  <span>Event Planning</span>
+                </div>
+              </div>
+            </div>
+            <div class="leadership-entry">
+              <div class="leadership-left">2022 — 2023</div>
+              <div class="leadership-right">
+                <div class="leadership-role">President · Himmat</div>
+                <div class="leadership-description">
+                  Organized 10+ factory workshops on domestic violence prevention and provided training for at-risk women in industrial areas.
+                </div>
+                <div class="leadership-tags">
+                  <span>Leadership</span>
+                  <span>Advocacy</span>
+                  <span>Community Impact</span>
+                </div>
+              </div>
+            </div>
+          
+            <div class="leadership-entry">
+              <div class="leadership-left">2021 — 2023</div>
+              <div class="leadership-right">
+                <div class="leadership-role">Founder & President · Stempower</div>
+                <div class="leadership-description">
+                  Founded nonprofit reaching 700+ girls across Pakistan with a custom STEM curriculum; partnered with 10+ schools and published nationally through The Citizens Foundation.
+                </div>
+                <div class="leadership-tags">
+                  <span>STEM Education</span>
+                  <span>Curriculum Development</span>
+                  <span>Women Empowerment</span>
+                </div>
+              </div>
+            </div>
+          
+            <div class="leadership-entry">
+              <div class="leadership-left">2019 — 2022</div>
+              <div class="leadership-right">
+                <div class="leadership-role">Program Evaluation & Leadership Specialist · Seeds of Peace</div>
+                <div class="leadership-description">
+                  Facilitated cross-border peace-building workshops for South Asian youth; led program evaluation, activity design, and community engagement at national camps.
+                </div>
+                <div class="leadership-tags">
+                  <span>Peacebuilding</span>
+                  <span>Facilitation</span>
+                  <span>Impact Evaluation</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section">
+        <div class="contact-container">
+          <div class="contact-header">
+            <h2>Contact Me</h2>
+            <p>Let’s get in touch</p>
+          </div>
+      
+        <div class="contact-wrapper">
+          <div class="contact-content">
+            <div class="contact-info">
+              
+              <div class="info-item">
+                <img src="assets/email.svg" class="contact-icon" alt="Email Icon" />
+                <div>
+                  <h4>Email</h4>
+                  <p><a href="mailto:zahra.husain@columbia.edu">zahra.husain@columbia.edu</a></p>
+                </div>
+              </div>
+          
+              <div class="info-item">
+                <img src="assets/pin.svg" class="contact-icon" alt="Location Icon" />
+                <div>
+                  <h4>Location</h4>
+                  <p>New York, NY</p>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+          
+          
+            <form class="contact-form" action="mailto:zahra.husain@columbia.edu" method="post" enctype="text/plain">
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <textarea name="message" placeholder="Message" rows="5" required></textarea>
+              <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+      
+       
+        <footer>© 2025 Zahra Husai
+          <div class="contact-links">
+            <a href="mailto:zahra.husain@columbia.edu" class="btn outline">Email Me</a>
+            <a href="https://linkedin.com/in/zahra-husain-/" target="_blank" class="btn outline">LinkedIn</a>
+            <a href="https://github.com/zahrahusain45" target="_blank" class="btn outline">GitHub</a>
+          </div>
+        </footer>
+      </section>
+
+      <script>
+        window.addEventListener("load", () => {
+          document.body.classList.add("loaded");
+          const loader = document.getElementById("loader");
+          if (loader) loader.classList.add("is-hidden");
+        });
+
+        const aboutPanel = document.getElementById('aboutPanel');
+        const openAbout = document.getElementById('openAbout');
+        const closeAbout = document.getElementById('closeAbout');
+
+        openAbout?.addEventListener('click', () => aboutPanel?.classList.add('open'));
+        closeAbout?.addEventListener('click', () => aboutPanel?.classList.remove('open'));
+        aboutPanel?.addEventListener('click', e => {
+          if (e.target === aboutPanel) aboutPanel.classList.remove('open');
+        });
+
+          document.addEventListener("DOMContentLoaded", function () {
+            const subtitle = document.getElementById("typedSubtitle");
+            const text = "Student at Columbia University";
+            let i = 0;
+            function typeWriter() {
+              if (i < text.length) {
+                subtitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 70);
+              }
+            }
+            subtitle.textContent = ""; // Ensure empty
+            typeWriter();
+          });
+        </script>
+      </body>
+      </html>
