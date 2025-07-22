@@ -318,6 +318,7 @@
     }    
 
     .tag-row {
+      margin-left: 12%;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
