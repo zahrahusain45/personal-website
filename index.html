@@ -103,14 +103,14 @@
       <div class="hero-content">
         <h1>Zahra Husain</h1>
         <p id="typedSubtitle" class="typed-subtitle"></p>
-        <div class="left-email">
+        <div class="left-email show-on-hero">
           <a href="mailto:zahra.husain@columbia.edu">zahra.husain@columbia.edu</a>
         </div>
         <a href="#contact" id="hireMe" class="btn primary">Hire Me →</a>
       </div>
     </section>
 
-    <div class="fixed-socials">
+    <div class="fixed-socials show-on-hero">
         <a href="https://linkedin.com/in/zahra-husain-/"><img src="assets/linkedin.svg" alt="LinkedIn" /></a>
         <a href="https://github.com/zahrahusain45"><img src="assets/github.svg" alt="GitHub" /></a>
         <a href="https://www.instagram.com/zahrahusain4"><img src="assets/instagram.svg" alt="Instagram" /></a>
@@ -454,15 +454,32 @@
       </section>
       
       
-       
-        <footer>© 2025 Zahra Husai
-          <div class="contact-links">
-            <a href="mailto:zahra.husain@columbia.edu" class="btn outline">Email Me</a>
-            <a href="https://linkedin.com/in/zahra-husain-/" target="_blank" class="btn outline">LinkedIn</a>
-            <a href="https://github.com/zahrahusain45" target="_blank" class="btn outline">GitHub</a>
-          </div>
-        </footer>
-      </section>
+    <footer class="footer">
+      <div class="footer-left">
+        <h1>Zahra Husain</h1>
+        <p>Columbia University, Class of 2027</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#aboutme">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/zahra-husain-/" target="_blank">
+          <img src="assets/linkedin.svg" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/zahrahusain45" target="_blank">
+          <img src="assets/github.svg" alt="GitHub" />
+        </a>
+        <a href="mailto:zahra.husain@columbia.edu">
+          <img src="assets/email.svg" alt="Email" />
+        </a>
+      </div>
+    </footer>
+
+
 
       <script>
         window.addEventListener("load", () => {
@@ -496,5 +513,31 @@
             typeWriter();
           });
         </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const hero = document.querySelector("#home");
+            const stickyItems = document.querySelectorAll(".show-on-hero");
+
+            function toggleVisibility() {
+              const rect = hero.getBoundingClientRect();
+              const fullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+              stickyItems.forEach((el) => {
+                if (fullyVisible) {
+                  el.style.opacity = "1";
+                  el.style.pointerEvents = "auto";
+                } else {
+                  el.style.opacity = "0";
+                  el.style.pointerEvents = "none";
+                }
+              });
+            }
+
+            toggleVisibility();
+            window.addEventListener("scroll", toggleVisibility);
+            window.addEventListener("resize", toggleVisibility);
+          });
+        </script>
+
       </body>
       </html>
