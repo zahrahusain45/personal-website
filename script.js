@@ -33,6 +33,24 @@ document.addEventListener('mousemove', e => {
     typing();
   }
 
+  window.addEventListener("load", () => {
+    const progressFill = document.querySelector(".progress-fill");
+  
+    // Animate the bar from 0% → 100%
+    setTimeout(() => {
+      progressFill.style.width = "100%";
+    }, 200);
+  
+    // After animation, fade out splash
+    setTimeout(() => {
+      document.getElementById("loader").style.opacity = "0";
+      document.getElementById("loader").style.transition = "opacity 0.5s ease";
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+      }, 500);
+    }, 2500); // matches 2s animation + buffer
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
     const subtitle = document.querySelector(".typed-subtitle");
     if (!subtitle) return;
@@ -78,4 +96,6 @@ document.addEventListener('mousemove', e => {
     });
   });
 </script>
+
+
 

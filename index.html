@@ -1,543 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zahra Husain | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
-
-  <style>
-    /* Loader Styles */
-    body {
-      background-color: #1c1d2;
-      margin: 0;
-    }
-   
-    #page-wrap {
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    body.loaded #page-wrap {
-      opacity: 1;
-    }
-
-    @keyframes stripe {
-      0% { left: 0; width: 0px; }
-      25% { left: 0; width: 100%; }
-      50% { left: 100%; width: 0px; }
-      75% { left: 0; width: 100%; }
-      100% { left: 0; width: 0px; }
-    }
-
-    #loader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: #252a60;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      transition: opacity 0.7s, visibility 0.7s;
-    }
-
-    #loader.is-hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .stripe-loader {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .stripe {
-      height: 30px;
-      width: 0;
-      background: #ffffff;
-      position: relative;
-      animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) infinite;
-    }
-
-    .stripe:nth-child(2) { animation-delay: 0.1s; }
-    .stripe:nth-child(3) { animation-delay: 0.2s; }
-  </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="stripe-loader">
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-      <div class="stripe"></div>
-    </div>
+    <!-- TYPING SPLASH SCREEN -->
+    <div id="loader" class="splash-screen">
+        <div class="splash-content">
+            <div class="typing-container">
+                <h1 class="typing-text" id="typingName"></h1>
+                <div class="typing-subtitle" id="typingSubtitle"></div>
+                <div class="cursor" id="typingCursor">|</div>
+            </div>
+        </div>
   </div>
 
   <!-- PAGE CONTENT -->
-  <div id="page-wrap">
-    <!-- Your original content begins -->
+    <div id="page-wrap" class="page-transition">
     <header class="main-nav">
-      <a href="#" class="logo">
+            <a href="index.html" class="logo">
         <img id="navLogo" src="assets/monogram_white.svg" alt="ZH Logo">
       </a>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#aboutme">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
       </nav>
-    </header>
-
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="hero-logo">
-        <img id="heroLogo" src="assets/monogram_color.svg" alt="" aria-hidden="true">
-      </div>
-      <div class="hero-content">
-        <h1>Zahra Husain</h1>
-        <p id="typedSubtitle" class="typed-subtitle"></p>
-        <div class="left-email show-on-hero">
-          <a href="mailto:zahra.husain@columbia.edu">zahra.husain@columbia.edu</a>
-        </div>
-        <a href="#contact" id="hireMe" class="btn primary">Hire Me →</a>
-      </div>
-    </section>
-
-    <div class="fixed-socials show-on-hero">
-        <a href="https://linkedin.com/in/zahra-husain-/"><img src="assets/linkedin.svg" alt="LinkedIn" /></a>
-        <a href="https://github.com/zahrahusain45"><img src="assets/github.svg" alt="GitHub" /></a>
-        <a href="https://www.instagram.com/zahrahusain4"><img src="assets/instagram.svg" alt="Instagram" /></a>
-        <a href="mailto:zahra.husain@columbia.edu"><img src="assets/email.svg" alt="Email" /></a>
-    </div>
-
-    
-
-    <div class="projects-bg">
-      <section id="about" class="about-section">
-        <div class="about-container">
-          <div class="about-text">
-            <h2>About Me.</h2>
-            <p><em>Computer Science at Columbia University.</em></p>
-            <br>
-            <p>
-              I'm Zahra Husain, a rising junior at Columbia studying <strong>Computer Science</strong> and <strong>Business Management</strong>.
-              I love using code to solve real problems. My work spans machine learning, natural language processing, full-stack apps, and data infrastructure, always grounded in curiosity and impact.
-            </p>
-            <br>
-            <p>
-              I'm originally from Lahore, Pakistan, you’ll often find me biking around the city, experimenting with new recipes, or buried in a good museum exhibit.
-            </p>
-            <br>
-            <a href="assets/Zahra_Husain_Resume.pdf" class="btn-resume" target="_blank">Resume →</a>
-          </div>
-          <img src="assets/profile.png" alt="Zahra Husain" class="profile-pic" />
-        </div>
-
-        <div class="tag-row">
-          <h4>Languages:</h4>
-          <div class="tag-group">
-              <span>Python</span>
-              <span>Java</span>
-              <span>C</span>
-              <span>SQL</span>
-              <span>JavaScript</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Bash</span>
-          </div>
-        </div>
-        <div class="tag-row">
-          <h4>Frameworks:</h4>
-          <div class="tag-group">
-            <span>React</span>
-            <span>Flask</span>
-            <span>PyTorch</span>
-            <span>scikit-learn</span>
-            <span>Pandas</span>
-            <span>NumPy</span>
-            <span>OpenCV</span>
-            <span> Hugging Face </span>
-            <span>Power BI</span>
-          </div>
-        </div>
-        <div class="tag-row">
-          <h4>Tools:</h4>
-          <div class="tag-group">
-            <span>Git</span>
-            <span>Microsoft Purview</span>
-            <span>Jupyter Notebook</span>
-            <span>Figma</span>
-            <span>Linux</span>
-            <span>PySpark</span>
-            <span>Llama</span>
-            <span> OpenRouter GPT </span>
-            <span>Chrome Extension API</span>
-          </div>
-        </div>
-        <div class="tag-row">
-          <h4>Concepts:</h4>
-          <div class="tag-group">
-            <span>Natural Language Processing</span>
-            <span>Machine Learning</span>
-            <span>Computer Vision</span>
-            <span>LLM Integration</span>
-            <span>ETL Pipelines</span>
-            <span>Data Governance</span>
-            <span>Data Visualization</span>
-          </div>
-        </div>
-  </div>   
-</section>
-</div>
-    
-  
-        
-    <div class="full-width-white">
-        <!-- EXPERIENCE / TIMELINE -->
-        <section id="experience" class="section experience">
-            <h2>Experience</h2>
-            
-            <div class="experience-entry">
-              <div class="experience-left">2025 — Present</div>
-              <div class="experience-right">
-                <h3 class="experience-role">Data Governance Intern · Grupo Bimbo</h3>
-                <p class="experience-description">
-                  Built a centralized Microsoft Purview data catalog covering 500+ BI reports; collaborated across 5+ teams to establish a unified glossary, resolving 20+ cross-department data inconsistencies.
-                </p>
-                <div class="experience-tags">
-                  <span>Data Governance</span>
-                  <span>Microsoft Purview</span>
-                  <span>SQL</span>
-                  <span>Power Bi</span>
-                </div>
-              </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+        </header>
 
-            <div class="experience-entry">
-              <div class="experience-left">2025 — Present</div>
-              <div class="experience-right">
-                <h3 class="experience-role">Research Assistant · Columbia University</h3>
-                <p class="experience-description">
-                  Led a radiomics study analyzing 5,000+ breast cancer MRI scans; developed ML algorithms in Python to extract image-based tumor biomarkers with 95% confidence, supporting clinical research.
-                </p>
-                <div class="experience-tags">
-                  <span>Python</span>
-                  <span>Pandas</span>
-                  <span>Radiomics</span>
-                  <span>ML</span>
-                  <span>scikit-image</span>
+        <!-- INTERACTIVE HERO -->
+        <section id="home" class="interactive-hero">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Zahra Husain</h1>
+                <p class="hero-subtitle">Computer Science Student at Columbia University</p>
+                <div class="hero-stats">
+                    <div class="stat-item fade-in-scale">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Years Experience</span>
                 </div>
+                    <div class="stat-item fade-in-scale">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Projects Completed</span>
               </div>
-            </div>
-        
-          
-            <div class="experience-entry">
-              <div class="experience-left">2024</div>
-              <div class="experience-right">
-                <h3 class="experience-role">Data Engineer Intern · Techlogix</h3>
-                <p class="experience-description">
-                  Designed scalable data pipelines processing 1TB/day and automated 150+ QA scripts in PySpark, improving data accuracy to 99%. Built 5+ dashboards and optimized fraud detection for 30M+ users.
-                </p>
-                <div class="experience-tags">
-                  <span>Python</span>
-                  <span>ETL</span>
-                  <span>SQL</span>
-                  <span>PySpark</span>
-                  <span>Power Bi</span>
-                </div>
-              </div>
-            </div>
-          
-            <div class="experience-entry">
-              <div class="experience-left">2022 — 2022</div>
-              <div class="experience-right">
-                <h3 class="experience-role">Business Strategy & Growth Intern · EduFi</h3>
-                <p class="experience-description">
-                  Increased user adoption by 25% through SQL-driven outreach; identified 20+ high-potential client segments and analyzed 50+ VC firm portfolios to support investor targeting.
-                </p>
-                <div class="experience-tags">
-                  <span>SQL</span>
-                  <span>Marketing Analytics</span>
-                  <span>Data Analysis</span>
-                </div>
-              </div>
-            </div>
-          </section>
-        
-          
-        <!-- PROJECTS -->
-         
-        <div class="projects-bg">
-            <section id="projects" class="projects-section">
-              <h2>Projects</h2>
-              <p class="projects-subtitle">Click on any project to learn more</p>
-              <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-icon">📝</div>
-                    <h3>ToS Summarizer</h3>
-                    <p>Chrome extension that uses LLaMA to summarize Terms of Service pages in real time, reducing reading time by 80% across 100+ websites.
-                    </p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                        <span>LLM</span>
-                        <span>Chrome Extension API</span>
-                  </div>
-                </div>
-              
-                <div class="project-card">
-                    <div class="project-icon">💸</div>
-                    <h3>SmartMoney Hub</h3>
-                    <p>Personal finance app that classifies transactions from CSV bank statements using GPT, achieving 98% accuracy and saving users 5+ hours/week.
-                    </p>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>Python</span>
-                        <span>OpenRouter GPT</span>
-                        <span>CSV Parsing</span>
-                        <span>UI/UX</span>
+                    <div class="stat-item fade-in-scale">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Internships</span>
                     </div>
                 </div>
-                <div class="project-card">
-                  <div class="project-icon">🏌️</div>
-                  <h3> Golf Swing Analyzer</h3>
-                  <p>Computer vision app that analyzes golf swings using pose estimation and offers real-time coaching with LLM-powered feedback.                  </p>
-                  <div class="project-tags">
-                      <span>OpenCV</span>
-                      <span>Hugging Face </span>
-                      <span>MediaPipe</span>
-                      <span>Flask</span>
-                      <span>LLM </span>
-                      <span>Python</span>
-                  </div>
-              </div>
-              <div class="project-card">
-                <div class="project-icon">💸</div>
-                <h3>NYC Rideshare ML Model</h3>
-                <p>Built ML models to predict ride prices and classify Uber vs. Lyft trips using NYC open data, with geospatial feature engineering and model evaluation.
-                </p>
-                <div class="project-tags">
-                    <span>Pandas</span>
-                    <span>scikit-learn</span>
-                    <span>Python</span>
-                    <span>Jupyter</span>
-                    <span>Data Visualization</span>
-                </div>
-              </div>
-              <div class="project-card">
-                <div class="project-icon">🧠</div>
-                <h3>Self-Tuning Habit Tracker</h3>
-                <p>ML-powered journaling app that uses NLP to extract mood patterns and LLMs to generate personalized habit recommendations.
-                </p>
-                <div class="project-tags">
-                    <span>NLP</span>
-                    <span>React</span>
-                    <span>Python</span>
-                    <span>Time Series</span>
-                    <span>NumPy</span>
+                <div class="hero-actions fade-in">
+                    <a href="projects.html" class="btn primary">View My Work</a>
+                    <a href="contact.html" class="btn secondary">Get In Touch</a>
                 </div>
             </div>
+            <div class="floating-elements">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
           </div>
         </section>
 
-        <div class="full-width-white">
-            <section id="projects" class="leadership section">
-            <h2>Leadership & Social Impact</h2>
-            <div class="leadership-entry">
-              <div class="leadership-left">2025 — Present</div>
-              <div class="leadership-right">
-                <div class="leadership-role">President · Club Zamana</div>
-                <div class="leadership-description">
-                  Lead Columbia’s South Asian cultural organization; planned and executed 10+ high-impact community events promoting identity, inclusion, and campus dialogue.
+        <!-- FEATURED PROJECTS -->
+        <section class="featured-projects">
+            <div class="container">
+                <h2 class="section-title fade-in">Featured Work</h2>
+                <div class="projects-showcase">
+                    <div class="project-card-large fade-in-scale">
+                        <div class="project-image">
+                            <img src="assets/edufi.png" alt="EduFi Platform">
+                            <div class="project-overlay">
+                                <a href="projects.html" class="project-link">View Details</a>
+                            </div>
                 </div>
-                <div class="leadership-tags">
-                  <span>Leadership</span>
-                  <span>Community Engagement</span>
-                  <span>Event Planning</span>
-                </div>
-              </div>
-            </div>
-            <div class="leadership-entry">
-              <div class="leadership-left">2022 — 2023</div>
-              <div class="leadership-right">
-                <div class="leadership-role">President · Himmat</div>
-                <div class="leadership-description">
-                  Organized 10+ factory workshops on domestic violence prevention and provided training for at-risk women in industrial areas.
-                </div>
-                <div class="leadership-tags">
-                  <span>Leadership</span>
-                  <span>Advocacy</span>
-                  <span>Community Impact</span>
+                        <div class="project-content">
+                            <h3>EduFi Platform</h3>
+                            <p>Full-stack educational finance platform with React frontend and Node.js backend, featuring real-time data analytics.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
                 </div>
               </div>
             </div>
-          
-            <div class="leadership-entry">
-              <div class="leadership-left">2021 — 2023</div>
-              <div class="leadership-right">
-                <div class="leadership-role">Founder & President · Stempower</div>
-                <div class="leadership-description">
-                  Founded nonprofit reaching 700+ girls across Pakistan with a custom STEM curriculum; partnered with 10+ schools and published nationally through The Citizens Foundation.
+                    
+                    <div class="project-card-large fade-in-scale">
+                        <div class="project-image">
+                            <img src="assets/techlogix.png" alt="Data Pipeline">
+                            <div class="project-overlay">
+                                <a href="projects.html" class="project-link">View Details</a>
+                            </div>
                 </div>
-                <div class="leadership-tags">
-                  <span>STEM Education</span>
-                  <span>Curriculum Development</span>
-                  <span>Women Empowerment</span>
+                        <div class="project-content">
+                            <h3>Data Pipeline System</h3>
+                            <p>Scalable ETL pipeline processing 1TB+ daily data with PySpark, featuring automated QA scripts and monitoring.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>PySpark</span>
+                                <span>ETL</span>
                 </div>
               </div>
             </div>
           
-            <div class="leadership-entry">
-              <div class="leadership-left">2019 — 2022</div>
-              <div class="leadership-right">
-                <div class="leadership-role">Program Evaluation & Leadership Specialist · Seeds of Peace</div>
-                <div class="leadership-description">
-                  Facilitated cross-border peace-building workshops for South Asian youth; led program evaluation, activity design, and community engagement at national camps.
+                    <div class="project-card-large fade-in-scale">
+                        <div class="project-image">
+                            <img src="assets/columbia.png" alt="ML Research">
+                            <div class="project-overlay">
+                                <a href="projects.html" class="project-link">View Details</a>
+                            </div>
                 </div>
-                <div class="leadership-tags">
-                  <span>Peacebuilding</span>
-                  <span>Facilitation</span>
-                  <span>Impact Evaluation</span>
+                        <div class="project-content">
+                            <h3>Radiomics ML Study</h3>
+                            <p>Machine learning algorithms for breast cancer MRI analysis, extracting tumor biomarkers with 95% confidence.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>ML</span>
+                                <span>Research</span>
                 </div>
+              </div>
+            </div>
+                </div>
+                <div class="projects-cta fade-in">
+                    <a href="projects.html" class="btn primary">View All Projects</a>
               </div>
             </div>
           </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="contact-section">
-        <div class="contact-container">
-          <div class="contact-header">
-            <h2>Contact Me</h2>
-            <p>Let’s get in touch</p>
+        <!-- QUICK ABOUT -->
+        <section class="quick-about">
+            <div class="container">
+                <div class="about-preview">
+                    <div class="about-text fade-in-left">
+                        <h2>About Me</h2>
+                        <p>I'm a rising junior at Columbia studying <strong>Computer Science</strong> and <strong>Business Management</strong>. I love using code to solve real problems through machine learning, full-stack development, and data infrastructure.</p>
+                        <a href="about.html" class="btn secondary">Learn More</a>
           </div>
-      
-        <div class="contact-wrapper">
-          <div class="contact-content">
-            <div class="contact-info">
-              
-              <div class="info-item">
-                <img src="assets/email.svg" class="contact-icon" alt="Email Icon" />
-                <div>
-                  <h4>Email</h4>
-                  <p><a href="mailto:zahra.husain@columbia.edu">zahra.husain@columbia.edu</a></p>
-                </div>
+                    <div class="about-image fade-in-right">
+                        <img src="assets/profile.png" alt="Zahra Husain">
               </div>
-          
-              <div class="info-item">
-                <img src="assets/pin.svg" class="contact-icon" alt="Location Icon" />
-                <div>
-                  <h4>Location</h4>
-                  <p>New York, NY</p>
-                </div>
-              </div>
-          
-            </div>
-          </div>
-          
-          
-            <form class="contact-form" action="mailto:zahra.husain@columbia.edu" method="post" enctype="text/plain">
-              <input type="text" name="name" placeholder="Name" required />
-              <input type="email" name="email" placeholder="Email" required />
-              <textarea name="message" placeholder="Message" rows="5" required></textarea>
-              <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
-            </form>
           </div>
         </div>
       </section>
       
-      
     <footer class="footer">
-      <div class="footer-left">
-        <h1>Zahra Husain</h1>
-        <p>Columbia University, Class of 2027</p>
-      </div>
-
+            <div class="footer-content">
+                <p>&copy; 2024 Zahra Husain. All rights reserved.</p>
       <div class="footer-links">
-        <a href="#aboutme">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="experience.html">Experience</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
       </div>
-
       <div class="footer-socials">
-        <a href="https://linkedin.com/in/zahra-husain-/" target="_blank">
+                    <a href="https://linkedin.com/in/zahra-husain-/">
           <img src="assets/linkedin.svg" alt="LinkedIn" />
         </a>
-        <a href="https://github.com/zahrahusain45" target="_blank">
+                    <a href="https://github.com/zahrahusain45">
           <img src="assets/github.svg" alt="GitHub" />
         </a>
+                    <a href="https://www.instagram.com/zahrahusain4">
+                        <img src="assets/instagram.svg" alt="Instagram" />
+                    </a>
         <a href="mailto:zahra.husain@columbia.edu">
           <img src="assets/email.svg" alt="Email" />
         </a>
+                </div>
       </div>
     </footer>
-
-
+    </div>
 
       <script>
-        window.addEventListener("load", () => {
-          document.body.classList.add("loaded");
-          const loader = document.getElementById("loader");
-          if (loader) loader.classList.add("is-hidden");
-        });
-
-        const aboutPanel = document.getElementById('aboutPanel');
-        const openAbout = document.getElementById('openAbout');
-        const closeAbout = document.getElementById('closeAbout');
-
-        openAbout?.addEventListener('click', () => aboutPanel?.classList.add('open'));
-        closeAbout?.addEventListener('click', () => aboutPanel?.classList.remove('open'));
-        aboutPanel?.addEventListener('click', e => {
-          if (e.target === aboutPanel) aboutPanel.classList.remove('open');
-        });
-
-          document.addEventListener("DOMContentLoaded", function () {
-            const subtitle = document.getElementById("typedSubtitle");
-            const text = "Student at Columbia University";
+        // Typing animation with audio
+        function typeText(element, text, speed = 100) {
+            return new Promise((resolve) => {
             let i = 0;
-            function typeWriter() {
+                element.innerHTML = '';
+                const typeInterval = setInterval(() => {
               if (i < text.length) {
-                subtitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 70);
-              }
-            }
-            subtitle.textContent = ""; // Ensure empty
-            typeWriter();
-          });
-        </script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const hero = document.querySelector("#home");
-            const stickyItems = document.querySelectorAll(".show-on-hero");
+                        element.innerHTML += text.charAt(i);
+                        playTypingSound();
+                        i++;
+                    } else {
+                        clearInterval(typeInterval);
+                        resolve();
+                    }
+                }, speed);
+            });
+        }
 
-            function toggleVisibility() {
-              const rect = hero.getBoundingClientRect();
-              const fullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-
-              stickyItems.forEach((el) => {
-                if (fullyVisible) {
-                  el.style.opacity = "1";
-                  el.style.pointerEvents = "auto";
-                } else {
-                  el.style.opacity = "0";
-                  el.style.pointerEvents = "none";
+        function playTypingSound() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
                 }
-              });
+                
+                // Create soft, rhythmic keyboard click
+                const oscillator1 = audioContext.createOscillator();
+                const oscillator2 = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                const filter = audioContext.createBiquadFilter();
+                const filter2 = audioContext.createBiquadFilter();
+                
+                // Connect audio nodes with filters for softness
+                oscillator1.connect(filter);
+                oscillator2.connect(filter2);
+                filter.connect(gainNode);
+                filter2.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                // Soft, crisp frequencies - lower pitch
+                const baseFreq = 600 + Math.random() * 200; // Lower, deeper base
+                const tapFreq = 1000 + Math.random() * 300; // Lower plastic tap frequency
+                
+                // Main soft click (higher frequency for crispness)
+                oscillator1.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
+                oscillator1.type = 'sine'; // Sine wave for softness
+                
+                // Subtle plastic tap (very high frequency)
+                oscillator2.frequency.setValueAtTime(tapFreq, audioContext.currentTime);
+                oscillator2.type = 'triangle'; // Triangle for soft tap
+                
+                // Soft low-pass filters to create that subtle plastic sound - adjusted for lower pitch
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(1500, audioContext.currentTime);
+                filter.Q.setValueAtTime(0.5, audioContext.currentTime);
+                
+                filter2.type = 'lowpass';
+                filter2.frequency.setValueAtTime(2000, audioContext.currentTime);
+                filter2.Q.setValueAtTime(0.3, audioContext.currentTime);
+                
+                // Soft, rhythmic envelope - quick but gentle
+                gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.03, audioContext.currentTime + 0.001); // Very quick, soft attack
+                gainNode.gain.linearRampToValueAtTime(0.025, audioContext.currentTime + 0.005); // Gentle sustain
+                gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.06); // Soft decay
+                
+                // Start both oscillators
+                oscillator1.start(audioContext.currentTime);
+                oscillator2.start(audioContext.currentTime);
+                
+                // Stop after short, crisp duration
+                oscillator1.stop(audioContext.currentTime + 0.06);
+                oscillator2.stop(audioContext.currentTime + 0.06);
+            } catch (error) {
+                console.log('Audio not available:', error);
             }
+        }
 
-            toggleVisibility();
-            window.addEventListener("scroll", toggleVisibility);
-            window.addEventListener("resize", toggleVisibility);
-          });
+        window.addEventListener("load", async () => {
+            const typingName = document.getElementById('typingName');
+            const typingSubtitle = document.getElementById('typingSubtitle');
+            const cursor = document.getElementById('typingCursor');
+            
+            await typeText(typingName, 'Zahra Husain', 100); // Faster typing speed
+            await new Promise(resolve => setTimeout(resolve, 300)); // Reduced pause
+            await typeText(typingSubtitle, 'Student at Columbia University', 80); // Faster typing speed
+            await new Promise(resolve => setTimeout(resolve, 500)); // Reduced pause
+            cursor.style.display = 'none';
+            
+            setTimeout(() => {
+                document.body.classList.add("loaded");
+                const splashScreen = document.getElementById("loader");
+                if (splashScreen) splashScreen.classList.add("is-hidden");
+                const pageWrap = document.getElementById("page-wrap");
+                if (pageWrap) pageWrap.classList.add("loaded");
+                
+                // Start counter animation after page transition is complete
+                setTimeout(() => {
+                    animateCounters();
+                }, 1000);
+            }, 200); // Reduced final delay
+        });
+
+        // Fade-in on scroll functionality
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
         </script>
-
       </body>
       </html>

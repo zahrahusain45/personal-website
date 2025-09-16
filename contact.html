@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Zahra Husain</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SMOOTH SPLASH SCREEN -->
+    <div id="loader" class="splash-screen">
+        <div class="splash-content">
+            <div class="logo-splash-container">
+                <h1 class="splash-name">Zahra Husain</h1>
+                <img src="assets/monogram_white.svg" alt="ZH Logo" class="splash-logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div id="page-wrap" class="page-transition">
+        <header class="main-nav">
+            <a href="index.html" class="logo">
+                <img id="navLogo" src="assets/monogram_white.svg" alt="ZH Logo">
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <main class="contact-page">
+            <h1 class="fade-in">Let's Connect</h1>
+            <p class="contact-subtitle fade-in">I'm always excited to discuss new opportunities, collaborate on projects, or just chat about technology and innovation.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info fade-in-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="assets/email.svg" alt="Email">
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>zahra.husain@columbia.edu</p>
+                            <a href="mailto:zahra.husain@columbia.edu" class="contact-link">Send Email</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="assets/linkedin.svg" alt="LinkedIn">
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>Connect with me professionally</p>
+                            <a href="https://linkedin.com/in/zahra-husain-/" class="contact-link" target="_blank">View Profile</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="assets/github.svg" alt="GitHub">
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <p>Check out my code and projects</p>
+                            <a href="https://github.com/zahrahusain45" class="contact-link" target="_blank">View Repositories</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="assets/instagram.svg" alt="Instagram">
+                        </div>
+                        <div class="contact-details">
+                            <h3>Instagram</h3>
+                            <p>Follow my journey and daily life</p>
+                            <a href="https://www.instagram.com/zahrahusain4" class="contact-link" target="_blank">Follow Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in-right">
+                    <h2>Send a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="resume-section fade-in">
+                <h2>Resume</h2>
+                <p>Download my resume to learn more about my experience and qualifications.</p>
+                <a href="assets/Zahra_Husain_Resume.pdf" class="btn-resume" target="_blank">Download Resume</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Zahra Husain. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="experience.html">Experience</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com/in/zahra-husain-/">
+                        <img src="assets/linkedin.svg" alt="LinkedIn" />
+                    </a>
+                    <a href="https://github.com/zahrahusain45">
+                        <img src="assets/github.svg" alt="GitHub" />
+                    </a>
+                    <a href="https://www.instagram.com/zahrahusain4">
+                        <img src="assets/instagram.svg" alt="Instagram" />
+                    </a>
+                    <a href="mailto:zahra.husain@columbia.edu">
+                        <img src="assets/email.svg" alt="Email" />
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            // Smooth logo transition
+            setTimeout(() => {
+                document.body.classList.add("loaded");
+                const splashScreen = document.getElementById("loader");
+                if (splashScreen) splashScreen.classList.add("is-hidden");
+                const pageWrap = document.getElementById("page-wrap");
+                if (pageWrap) pageWrap.classList.add("loaded");
+            }, 800); // Show logo for 0.8 seconds
+        });
+
+        // Fade-in on scroll functionality
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const mailtoLink = `mailto:zahra.husain@columbia.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your message! Your email client should open with a pre-filled message.');
+        });
+    </script>
+</body>
+</html>
